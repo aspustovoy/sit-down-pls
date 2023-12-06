@@ -1,0 +1,224 @@
+.cooperation {
+
+  &__container {
+    padding-top: 25px;
+    padding-bottom: 64px;
+
+    @include small-tablet {
+      padding-bottom: 66px;
+    }
+
+    @include mobile {
+      padding-top: 32px;
+      padding-bottom: 42px;
+    }
+  }
+
+  &__title {
+    grid-column: 12 span;
+    margin: 0;
+    margin-bottom: 34px;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 100%;
+    color: var(--black);
+
+    @include tablet {
+      grid-column: 9 span;
+    }
+
+    @include small-tablet {
+      grid-column: 6 span;
+    }
+
+    @include mobile {
+      font-size: 24px;
+    }
+  }
+
+  &__content {
+    grid-column: 8 span;
+    margin-bottom: 35px;
+
+    @include small-tablet {
+      grid-column: 6 span;
+    }
+
+    @include mobile {
+      margin-bottom: 32px;
+    }
+
+    &--img {
+      grid-column: 6 span;
+
+      .cooperation__subtitle {
+        margin-bottom: 15px;
+
+        @include mobile {
+          margin-bottom: 14px;
+        }
+      }
+
+      .cooperation__text {
+        padding-left: 37px;
+        line-height: 150%;
+      }
+    }
+
+    &--numbered {
+      margin-bottom: 32px;
+
+
+      .cooperation__subtitle {
+        @include small-tablet {
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+
+  &__list {
+
+    &--img {
+      .cooperation__item {
+
+        &:nth-child(1) {
+          background: url(../img/cooperation-img1_1920.svg);
+          background-repeat: no-repeat;
+        }
+
+        &:nth-child(2) {
+          background: url(../img/cooperation-img2_1920.svg);
+          background-repeat: no-repeat;
+        }
+
+        &:nth-child(3) {
+          background: url(../img/cooperation-img3_1920.svg);
+          background-repeat: no-repeat;
+        }
+      }
+    }
+
+    &--numbered {
+      counter-reset: myCounter;
+
+      .cooperation__item {
+        position: relative;
+
+        &:before {
+          counter-increment: myCounter;
+          content: counter(myCounter)'.';
+          position: absolute;
+          font-family: var(--font-family);
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 180%;
+          color: var(--secondary);
+        }
+      }
+
+      .cooperation__text {
+        padding-left: 25px;
+        line-height: 181%;
+
+        @include mobile {
+          line-height: 25px;
+        }
+      }
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__subtitle {
+    margin: 0;
+    margin-bottom: 16px;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 24px;
+    color: var(--black);
+
+    @include mobile {
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    &--mobil {
+      @include mobile {
+        padding-top: 3px;
+        font-size: 14px;
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  &__text {
+    margin: 0;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 180%;
+    color: var(--grey-shade);
+
+    @include mobile {
+      font-size: 14px;
+      line-height: 179%;
+    }
+
+    &--lineHeight {
+      line-height: 181%;
+
+      @include mobile {
+        line-height: 179%;
+      }
+    }
+
+    &--width {
+      margin-right: 5px;
+    }
+  }
+
+  &__caption {
+    display: block;
+    margin-bottom: 15px;
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--secondary);
+
+    @include small-tablet {
+      margin-bottom: 16px;
+    }
+
+    @include mobile {
+      margin-bottom: 14px;
+
+    }
+  }
+
+  &__descr {
+    grid-column: 6 span;
+    padding-top: 21px;
+    padding-left: 17.4%;
+    padding-bottom: 28px;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 150%;
+    background: url(../img/cooperation-img4_1920.webp);
+    background-repeat: no-repeat;
+    color: var(--black);
+
+    @include mobile {
+      padding-top: 0;
+      font-size: 16px;
+      background-size: 12%;
+      background-position: 0 9px;
+    }
+  }
+}

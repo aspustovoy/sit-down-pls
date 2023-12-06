@@ -1,0 +1,233 @@
+.similar {
+  padding-top: 81px;
+  padding-bottom: 70px;
+
+  @include tablet {
+    padding-top: 70px;
+  }
+
+  @include small-tablet {
+    padding-top: 32px;
+    padding-bottom: 72px;
+  }
+
+  @include mobile {
+    padding-top: 56px;
+    padding-bottom: 119px;
+  }
+
+  &__container {
+    position: relative;
+  }
+
+
+  &__title {
+    margin: 0;
+    margin-bottom: 24px;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 130%;
+    color: var(--black);
+  }
+
+  .product {
+    padding-right: 15px;
+    padding-left: 15px;
+    min-height: auto;
+
+    @include mobile {
+      min-height: 278px;
+      padding-bottom: 16px;
+      box-sizing: border-box;
+    }
+
+    &__sale {
+      display: inline-block;
+      background: url(../img/ratingStar.svg);
+      background-repeat: no-repeat;
+      left: 30px;
+      top: 32px;
+      padding-right: 27px;
+      width: 67px;
+      background-position: 0 2px;
+      font-family: var(--font-family);
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 130%;
+      color: var(--secondary);
+
+      @include mobile {
+        top: 17px;
+        left: 15px;
+        padding-right: 0;
+        width: 58px;
+        font-size: 12px;
+        background-position: 0 1px;
+        background-size: 13px 12px;
+      }
+    }
+
+    &__image {
+      margin-bottom: 16px;
+      height: 191px;
+
+      @include mobile {
+        height: 90px;
+        margin-bottom: 16px;
+      }
+    }
+
+    &__title {
+      margin-bottom: 22px;
+      padding-left: 15px;
+      max-width: 251px;
+
+      @include mobile {
+        margin-bottom: 16px;
+        padding-left: 1px;
+        padding-right: 3px;
+        font-size: 16px;
+      }
+    }
+
+    &__cost {
+      padding-right: 15px;
+      padding-left: 15px;
+
+      @include mobile {
+        margin-bottom: 16px;
+        padding-left: 1px;
+        padding-right: 0;
+      }
+    }
+
+    &__price {
+      font-size: 16px;
+      color: var(--grey-shade)
+    }
+
+    &__cart {
+      padding-right: 15px;
+      padding-left: 15px;
+
+      @include mobile {
+        padding-left: 1px;
+        padding-right: 0;
+
+        .btn {
+          padding: 10px 23px;
+        }
+      }
+    }
+  }
+
+  .similar__slide {
+    @include mobile {
+      &:nth-child(2) {
+        img {
+          margin-bottom: -9px;
+        }
+      }
+    }
+  }
+
+  .swiper {
+    position: static;
+  }
+
+  .swiper-button-prev:after,
+  .swiper-button-next:after {
+    content: '';
+  }
+
+  .swiper-button-next.swiper-button-disabled,
+  .swiper-button-prev.swiper-button-disabled {
+    opacity: 1;
+
+    svg {
+      stroke: var(--grey);
+    }
+  }
+
+  .swiper-button-next {
+    top: 22px;
+    right: 12px;
+    width: 32px;
+    height: 32px;
+
+    svg {
+      object-fit: cover;
+      stroke: var(--primary);
+      fill: transparent;
+      transition: fill 0.3s ease-in-out, stroke 0.3s ease-in-out;
+    }
+
+    @include mobile {
+      top: auto;
+      bottom: -48px;
+      right: 38%;
+    }
+  }
+
+  .swiper-button-prev {
+    top: 22px;
+    right: 57px;
+    left: auto;
+    width: 32px;
+    height: 32px;
+
+    svg {
+      object-fit: cover;
+      stroke: var(--primary);
+      fill: transparent;
+      transition: fill 0.3s ease-in-out, stroke 0.3s ease-in-out;
+    }
+
+    @include mobile {
+      top: auto;
+      bottom: -48px;
+      left: 38%;
+    }
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    &:focus {
+      outline: none;
+    }
+
+    &.focus-visible {
+      svg {
+        fill: var(--primary-light);
+        stroke: var(--white);
+
+        circle {
+          stroke: var(--primary);
+        }
+      }
+    }
+
+    @include hover {
+      svg {
+        fill: var(--primary);
+        stroke: var(--white);
+
+        circle {
+          stroke: var(--primary);
+        }
+      }
+    }
+
+    &:active {
+      svg {
+        fill: var(--primary-shade);
+        stroke: var(--white);
+
+        circle {
+          stroke: var(--primary-shade);
+        }
+      }
+    }
+  }
+}

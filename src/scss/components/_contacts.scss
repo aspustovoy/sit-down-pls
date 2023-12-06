@@ -1,0 +1,316 @@
+.contacts {
+  &__container {
+    padding-bottom: 72px;
+
+    @include mobile {
+      padding-top: 48px;
+      padding-bottom: 69px;
+    }
+
+    picture {
+      grid-column: 6 span;
+      padding-top: 4%;
+
+      @include tablet {
+        grid-column: 5 span;
+        padding-top: 15%;
+      }
+
+      @include small-tablet {
+        grid-column: 2 span;
+        padding-top: 8%;
+      }
+
+      @include mobile {
+        display: none;
+      }
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 10px;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 100%;
+    color: var(--black);
+
+    @include mobile {
+      font-size: 24px;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    margin-bottom: 13px;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    color: var(--grey-shade);
+
+    @include tablet {
+      line-height: 135%;
+    }
+
+    @include small-tablet {
+      margin-bottom: 14px;
+    }
+
+    @include mobile {
+      margin-bottom: 14px;
+      line-height: 131%;
+    }
+
+    svg {
+      margin-top: 2px;
+      width: 14px;
+      height: 14px;
+      object-fit: cover;
+
+      @include mobile {
+        margin-top: 3px;
+        margin-left: -2px;
+      }
+
+      .symbol {
+        fill: var(--secondary);
+        transition: fill 0.3s ease-in-out;
+      }
+
+      .circle {
+        fill: var(--secondary);
+        transition: fill 0.3s ease-in-out;
+      }
+
+      .background {
+        fill: transparent;
+        transition: fill 0.3s ease-in-out;
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      &.focus-visible {
+        .symbol {
+          fill: var(--white);
+        }
+
+        .background {
+          fill: var(--secondary);
+        }
+      }
+
+      @include hover {
+        .symbol {
+          fill: var(--white);
+        }
+
+        .background {
+          fill: var(--secondary);
+        }
+      }
+    }
+  }
+
+  .contacts-form {
+    grid-column: 6 span;
+
+    @include tablet {
+      grid-column: 4 span;
+    }
+
+    @include mobile {
+      grid-column: 6 span;
+    }
+
+    &__items {
+      flex-direction: column;
+      align-items: start;
+      gap: 29px;
+
+      @include small-tablet {
+        gap: 28px;
+      }
+    }
+
+    &__field {
+      position: relative;
+      width: 100%;
+    }
+
+    &__input {
+      padding: 7px 18px;
+      width: 100%;
+      min-height: 54px;
+      border: 1px solid var(--grey-light);
+      border-radius: 10px;
+      font-family: var(--font-family);
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 40px;
+      color: var(--black);
+      background: var(--grey-light);
+      transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+      &::placeholder {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 40px;
+        color: var(--grey);
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      &.focus-visible {
+        border-color: var(--primary);
+        background: var(--pink-light);
+      }
+
+      @include hover {
+        background-color: var(--md-grey);
+        border-color: var(--md-grey);
+      }
+
+      &:active {
+        border-color: var(--green-input);
+        background: var(--grey-light);
+      }
+    }
+
+    &__btn {
+      margin-bottom: 13px;
+      padding: 16px 32px;
+
+      @include small-tablet {
+        margin-top: 3px;
+      }
+    }
+
+    &__checkbox {
+      position: relative;
+      padding-left: 23px;
+      font-family: var(--font-family);
+      font-weight: 400;
+      font-size: 14px;
+      color: var(--black);
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+
+      @include mobile {
+        padding-left: 20px;
+        font-size: 12px;
+      }
+
+      &:focus-within {
+        background-color: var(--pink-light)
+      }
+
+      span {
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 57%;
+          width: 14px;
+          height: 14px;
+          border: 1px solid var(--grey);
+          border-radius: 2px;
+          transform: translateY(-50%);
+
+          @include mobile {
+            top: 40%;
+          }
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 57%;
+          width: 14px;
+          height: 14px;
+          border: 1px solid var(--primary);
+          border-radius: 2px;
+          background: var(--primary);
+          background-image: url(../img/checked.svg);
+          background-repeat: no-repeat;
+          opacity: 0;
+          transform: translateY(-50%);
+
+          @include mobile {
+            top: 40%;
+          }
+        }
+      }
+
+      a {
+        color: var(--primary);
+        text-decoration-line: underline;
+        transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+        &:focus {
+          outline: none;
+        }
+
+        &.focus-visible {
+          background-color: var(--pink-violet);
+        }
+
+        @include hover {
+          color: var(--primary-light);
+        }
+
+        &:active {
+          color: var(--primary-shade);
+        }
+      }
+    }
+
+    .checkbox__input {
+      position: absolute;
+      clip: rect(1px 1px 1px 1px);
+      /* IE6, IE7 */
+      clip: rect(1px, 1px, 1px, 1px);
+      padding: 0;
+      border: 0;
+      height: 1px;
+      width: 1px;
+      overflow: hidden;
+
+      &:checked+span::after {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.checkbox-validate {
+  position: relative;
+}
+
+.popup {
+  height: 0;
+  opacity: 0;
+}
+
+.tippy-box {
+  padding: 5px;
+  border-radius: 0;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 9px;
+  line-height: 14px;
+  text-align: center;
+  color: var(--white);
+  background: var(--black);
+}
+
+.tippy-content {
+  padding: 0;
+}

@@ -1,0 +1,209 @@
+.footer {
+  background: var(--grey-light);
+
+  &__container {
+    padding-top: 24px;
+    padding-bottom: 21px;
+  }
+
+  .footer-left {
+    grid-column: 4 span;
+
+    @include tablet {
+      grid-column: 2 span;
+    }
+
+    @include small-tablet {
+      grid-column: 6 span;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @include mobile {
+      margin-bottom: 23px;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__logo {
+      display: block;
+      margin-bottom: 25px;
+
+      img {
+        width: 187px;
+        height: 27px;
+      }
+
+      @include mobile {
+        margin-bottom: 22px;
+      }
+    }
+
+    .social {
+      display: flex;
+      gap: 13px;
+      margin-left: -2px;
+
+      @include small-tablet {
+        margin-top: -4px;
+        margin-right: -2px;
+      }
+
+      &__link {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 36px;
+        height: 36px;
+        transition: background-color 0.3s ease-in-out;
+
+        svg {
+          display: block;
+          width: 30px;
+          height: 30px;
+          fill: var(--grey);
+          object-fit: cover;
+          transition: fill 0.3s ease-in-out;
+        }
+
+        &:focus {
+          outline: none;
+        }
+
+        &.focus-visible {
+          background: var(--primary-light);
+
+          svg {
+            fill: var(--white);
+          }
+        }
+
+        @include hover {
+          svg {
+            fill: var(--primary);
+          }
+        }
+
+        &:active {
+          svg {
+            fill: var(--primary-shade);
+          }
+        }
+      }
+    }
+  }
+
+  .footer-right {
+    padding-top: 2.5px;
+    grid-column: 8 span;
+
+    @include tablet {
+      grid-column: 7 span;
+    }
+
+    @include small-tablet {
+      padding-top: 0;
+      grid-column: 6 span;
+    }
+
+    &__list {
+      justify-content: space-between;
+
+      @include mobile {
+        display: grid;
+        column-gap: 16px;
+        grid-template-columns: repeat(6, 1fr);
+        row-gap: 24px;
+      }
+    }
+
+    .footer-item {
+
+      @include mobile {
+        grid-column: 3 span;
+      }
+
+      &--dec2 {
+        margin-left: -33px;
+
+        @include mobile {
+          margin-left: 0;
+        }
+      }
+
+      &--dec3 {
+        margin-left: -13px;
+
+        @include mobile {
+          margin-left: 0;
+        }
+      }
+
+      &__title {
+        margin: 0;
+        margin-bottom: 4px;
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 100%;
+        color: var(--black);
+      }
+
+      .list {
+        flex-direction: column;
+        gap: 6px;
+
+        &__link {
+          font-family: var(--font-family);
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 100%;
+          color: var(--grey);
+          transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+          &:focus {
+            outline: none;
+          }
+
+          &.focus-visible {
+            background-color: var(--pink-violet);
+          }
+
+          @include hover {
+            color: var(--primary);
+          }
+
+          &:active {
+            color: var(--primary-shade);
+          }
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    padding-top: 6px;
+    padding-bottom: 8px;
+    background: var(--white);
+
+    @include small-tablet {
+      padding-top: 8px;
+    }
+
+    span {
+      margin: 0 auto;
+      display: block;
+      width: 120px;
+      font-family: var(--font-family);
+      font-weight: 400;
+      font-size: 14px;
+      text-align: center;
+      color: var(--grey);
+
+      sup {
+        top: 0;
+        font-size: 14px;
+      }
+    }
+  }
+}
